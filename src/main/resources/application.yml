@@ -1,0 +1,18 @@
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: flag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+server:
+  port: 34567
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/sbs?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
