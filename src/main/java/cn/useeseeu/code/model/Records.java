@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class Records implements Serializable {
     private String id;
-    private int count;
+    private Integer count;
 
     public Records() {
     }
 
-    public Records(String id, int count) {
+    public Records(String id, Integer count) {
         this.id = id;
         this.count = count;
     }
@@ -22,11 +22,11 @@ public class Records implements Serializable {
         this.id = id;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 

@@ -3,9 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>次数统计</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-<h1>刷新浏览器</h1>
-<div>请求次数为<span th:text="${records.count}"></span></div>
+<!--<div>请求次数为<span th:text="${records.count}"></span></div>-->
+<div>当前一共有<span id="statistic"></span>人参与了此次活动</div>
+<script>
+  function setCount(count) {
+    var statistic = document.getElementById('statistic');
+    if (!statistic) return;
+    statistic.innerText = count;
+  }
+  axios.get('/count')
+    .then(function (response) {
+      console.log(response.data);
+      setCount(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+</script>
 </body>
 </html>
